@@ -152,10 +152,10 @@ export function SeverityPieChart({ data }: { data: SeverityStat[] }) {
                 </Pie>
                 <Tooltip
                     contentStyle={{ backgroundColor: "#0f172a", border: "1px solid #334155", borderRadius: 8, fontSize: 12 }}
-                    formatter={(v: number, name: string) => [v, name.charAt(0).toUpperCase() + name.slice(1)]}
+                    formatter={(value: any, name?: string) => [value, name ? (name.charAt(0).toUpperCase() + name.slice(1)) : ""]}
                 />
                 <Legend
-                    formatter={(v) => v.charAt(0).toUpperCase() + v.slice(1)}
+                    formatter={(value: string) => value.charAt(0).toUpperCase() + value.slice(1)}
                     wrapperStyle={{ fontSize: 11, color: "#94a3b8" }}
                 />
             </PieChart>
